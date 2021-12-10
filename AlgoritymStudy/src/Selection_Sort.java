@@ -23,7 +23,7 @@ public class Selection_Sort {
         a[j] = temp;
     }
 
-    public static void main(String[] args) {
+    public static void Selection_Sort_main(String[] args) {
 
         /*
         선택 정렬 : notion에 내용은 정리 했으니 참고 바람
