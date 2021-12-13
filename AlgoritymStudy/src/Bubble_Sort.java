@@ -19,7 +19,7 @@ public class Bubble_Sort {
         bubble[j] = temp;
     }
 
-    public static void main(String[] args) {
+    public static void Bubble_main(String[] args) {
         int[] bubble = {7,3,2,10,4,16};
         bubble_sort(bubble, bubble.length);
 
