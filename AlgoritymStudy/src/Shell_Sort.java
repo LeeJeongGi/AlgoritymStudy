@@ -8,7 +8,7 @@ public class Shell_Sort {
                     1149241, 2585792, 5818032, 13090572, 29453787,
                     66271020, 149109795, 335497038, 754868335, 1698453753};	// 갭을 담고있는 배열
 
-    public static void main(String[] args) {
+    public static void Shell_main(String[] args) {
 
         int[] a = {3,9,6,7,8,2,4};
         shell_sort(a, a.length);
