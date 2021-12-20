@@ -3,7 +3,7 @@ package backjun;
 import java.util.Scanner;
 
 public class Number2739 {
-    public static void main(String[] args) {
+    public static void two739_main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int multiplication = sc.nextInt();
 
