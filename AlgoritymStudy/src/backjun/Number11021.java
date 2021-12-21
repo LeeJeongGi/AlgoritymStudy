@@ -12,7 +12,6 @@ public class Number11021 {
         StringBuilder sb = new StringBuilder();
         for(int i = 1; i <= T; i++) {
             String[] input = br.readLine().split(" ");
-            //Case #1: 2
             int sum = calculate(input);
             sb.append(String.format("Case #%d: %d\n", i, sum));
         }
