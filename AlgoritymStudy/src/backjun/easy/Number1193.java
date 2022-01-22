@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Number1193 {
     public static void one193_main(String[] args) {
+
+        //test
         Scanner in = new Scanner(System.in);
         int X = in.nextInt();
         in.close();
