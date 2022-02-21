@@ -2,7 +2,7 @@ package backjun.easy;
 
 import java.util.Scanner;
 
-public class Number2438 {
+public class number2438 {
     public static void two2438_main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

@@ -3,7 +3,7 @@ package backjun.easy;
 import java.util.Scanner;
 
 public class Number4344 {
-    public static void main(String[] args) {
+    public static void four344_main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int C = sc.nextInt();
