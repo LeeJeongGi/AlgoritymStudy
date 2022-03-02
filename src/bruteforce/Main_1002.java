@@ -2,7 +2,7 @@ package src.bruteforce;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main_1002 {
     public static void main_1002(String[] args) {
         // 1002번 터렛 - 현재 문제 이해도 안됨
         Scanner in = new Scanner(System.in);
