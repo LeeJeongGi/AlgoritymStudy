@@ -2,7 +2,7 @@ package src.lecture.string;
 
 import java.util.Scanner;
 
-public class StringSearch1_01 {
+public class Lecture_01 {
     public static void main(String[] args) {
         /*
         설명

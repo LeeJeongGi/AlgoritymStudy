@@ -2,7 +2,7 @@ package src.lecture.string;
 
 import java.util.Scanner;
 
-public class StringConversion_02 {
+public class Lecture_02 {
     public static void main(String[] args) {
 
         /*
