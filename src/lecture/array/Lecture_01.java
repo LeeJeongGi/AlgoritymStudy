@@ -1,5 +1,7 @@
 package src.lecture.array;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Lecture_01 {
@@ -10,23 +12,29 @@ public class Lecture_01 {
          */
         Scanner sc = new Scanner(System.in);
 
-        int number = Integer.parseInt(sc.next());
-        String[] letters = new String[number];
+        int num = Integer.parseInt(sc.next());
+        int[] numbers = new int[num];
 
-        for(int i = 0; i < number; i++) {
-            letters[i] = sc.next();
+        for(int i = 0; i < num; i++) {
+            numbers[i] = sc.nextInt();
         }
 
-        String answer = letters[0];
-        for (int i = 1; i < number; i++) {
+        for(int number : solution(num,  numbers)) {
+            System.out.print(number + " ");
+        }
+    }
 
-            int point = Integer.parseInt(letters[i]);
-            int before = Integer.parseInt(letters[i - 1]);
+    private static List<Integer> solution(int number, int[] numbers) {
 
-            if(point > before) {
-                answer += " " + letters[i];
+        List<Integer> answer = new ArrayList<>();
+        answer.add(numbers[0]);
+
+        for(int i = 1; i < number; i++) {
+            if(numbers[i] > numbers[i-1]) {
+                answer.add(numbers[i]);
             }
         }
-        System.out.println(answer);
+
+        return answer;
     }
 }
