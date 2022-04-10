@@ -28,6 +28,15 @@ public class Lecture_13 {
          */
         Scanner sc = new Scanner(System.in);
 
+        int index = sc.nextInt();
+        String input = sc.next();
+
+        System.out.println(solution(index, input));
+
+    }
+
+    private static String solution(int index, String input) {
+
         /**
          * 1.문자를 입력받는다.
          * 2.7자리로 자른다
@@ -37,5 +46,19 @@ public class Lecture_13 {
          * 6.출력
          */
 
+        String answer = "";
+
+        for (int i = 0; i < index; i++) {
+            String temp = input.substring(0, 7);
+
+            temp = temp.replace("#", "1").replace("*", "0");
+            input = input.substring(7);
+
+            //Integer 메서드 활용해서 정수화 시키기 -> temp 문자 2진수로 보낸다 -> 정수로 돌려달라라는 뜻
+            int num = Integer.parseInt(temp, 2);
+            answer += (char) num;
+        }
+
+        return answer;
     }
 }
