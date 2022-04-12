@@ -22,11 +22,11 @@ public class Lecture_02 {
 
     private static int solution(int numberOfPeople, int[] people) {
 
-        int answer = 0;
+        int answer = 1;
 
         int min = people[0];
         for (int i = 1; i < numberOfPeople; i++) {
-            if(people[i] > people[i-1]) {
+            if(people[i] > min) {
                 answer++;
                 min = people[i];
             }
