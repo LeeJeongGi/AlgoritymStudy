@@ -1,4 +1,4 @@
-package src.effectiveJava.chapter4;
+package src.effectiveJava.chapter4.item16;
 
 // 코드 16-2 접근자와 변경자(mutator) 메서드를 활용해 데이터를 캡슐화한다. (102쪽)
 class Point {

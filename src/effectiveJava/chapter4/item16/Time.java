@@ -1,4 +1,4 @@
-package src.effectiveJava.chapter4;
+package src.effectiveJava.chapter4.item16;
 
 // 코드 16-3 불변 필드를 노출한 public 클래스 - 과연 좋은가? (103-104쪽)
 public final class Time {
