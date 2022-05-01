@@ -27,38 +27,30 @@ public class Lecture_09 {
     private static int solution(int N, int[][] board) {
 
         int max = 0;
+        int horizontalSum, lengthSum;
 
-        //가로
+        //가로,세로
         for (int i = 0; i < N; i++) {
-            int sum = 0;
+            horizontalSum = lengthSum = 0;
             for (int j = 0; j < N; j++) {
-               sum += board[i][j];
+                horizontalSum += board[i][j];
+                lengthSum += board[j][i];
             }
-            if (max < sum) {
-                max = sum;
-            }
-        }
 
-        //세로
-        for (int i = 0; i < N; i++) {
-            int sum = 0;
-            for (int j = 0; j < N; j++) {
-                sum += board[j][i];
-            }
-            if (max < sum) {
-                max = sum;
-            }
+            max = Math.max(max, horizontalSum);
+            max = Math.max(max, lengthSum);
         }
 
         //대각선
-        int sum = 0;
-        for (int i = 0; i < N; i++) {
-            sum += board[i][i];
+        int leftRight = 0;
+        int rightLeft = 0;
 
-            if (max < sum) {
-                max = sum;
-            }
+        for (int i = 0; i < N; i++) {
+            leftRight += board[i][i];
+            rightLeft += board[i][N - i - 1];
         }
+        max = Math.max(max, leftRight);
+        max = Math.max(max, rightLeft);
 
         return max;
     }
