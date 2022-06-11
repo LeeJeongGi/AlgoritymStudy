@@ -1,5 +1,7 @@
 package src.lecture.hash;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Lecture_03 {
@@ -30,14 +32,38 @@ public class Lecture_03 {
             values[i] = sc.nextInt();
         }
 
-
+        for (Integer integer : solution(N, K, values)) {
+            System.out.print(integer + " ");
+        }
 
     }
 
-    private static void solution(int N, int K, int[] values) {
+    private static ArrayList<Integer> solution(int N, int K, int[] values) {
+
+        ArrayList<Integer> answers = new ArrayList<>();
+        HashMap<Integer, Integer> hmValues = new HashMap<>();
+
+        for (int i = 0; i < K - 1; i++) {
+            hmValues.put(values[i], hmValues.getOrDefault(values[i], 0) + 1);
+        }
+
+        int leftPoint = 0;
+        for (int i = K - 1; i < N; i++) {
+
+            hmValues.put(values[i], hmValues.getOrDefault(values[i], 0) + 1);
+
+            answers.add(hmValues.size());
+
+            hmValues.put(values[leftPoint], hmValues.get(values[leftPoint]) - 1);
+            if (hmValues.get(values[leftPoint]) == 0) {
+                hmValues.remove(values[leftPoint]);
+            }
+
+            leftPoint++;
+        }
 
 
-
+        return answers;
 
     }
 }
