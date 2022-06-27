@@ -1,6 +1,7 @@
 package src.effectiveJava.stack;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Lecture_05 {
     public static void main(String[] args) {
@@ -10,5 +11,34 @@ public class Lecture_05 {
          * 레이저를 위에서 수직으로 발사하여 쇠막대기들을 자른다.
          */
         Scanner sc = new Scanner(System.in);
+        String input = sc.next();
+
+
+        System.out.println(solution(input));
+    }
+
+    private static int solution(String input) {
+
+        int answer = 0;
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < input.length(); i++) {
+
+            char ch = input.charAt(i);
+
+            if ('(' == ch) {
+                stack.push(ch);
+            } else {
+                stack.pop();
+
+                if ('(' == input.charAt(i - 1)) {
+                    answer += stack.size();
+                } else {
+                    answer += 1;
+                }
+            }
+        }
+
+        return answer;
     }
 }
