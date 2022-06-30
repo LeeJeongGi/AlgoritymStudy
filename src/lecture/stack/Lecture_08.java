@@ -1,4 +1,4 @@
-package src.effectiveJava.stack;
+package src.lecture.stack;
 
 import java.util.LinkedList;
 import java.util.Queue;
