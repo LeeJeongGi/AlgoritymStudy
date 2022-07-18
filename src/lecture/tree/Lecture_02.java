@@ -32,6 +32,10 @@ public class Lecture_02 {
             return;
         }
 
+        if (sum > total / 2) {
+            return;
+        }
+
         if (L == N) {
 
             if ((total - sum) == sum) {
