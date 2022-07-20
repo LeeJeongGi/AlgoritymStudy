@@ -7,7 +7,7 @@ public class Lecture_03 {
     public static void main(String[] args) {
 
         /**
-         * 피보나치 수열
+         * 팩토리얼
          */
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
