@@ -7,7 +7,6 @@ public class Lecture_03 {
     static int answer = Integer.MIN_VALUE;
     static int C, N;
     public static void main(String[] args) {
-
         /**
          * DFS(바둑이 승차)
          */
@@ -37,7 +36,6 @@ public class Lecture_03 {
         } else {
             DFS(L + 1, sum + values[L], values);
             DFS(L + 1, sum, values);
-
         }
     }
 }
