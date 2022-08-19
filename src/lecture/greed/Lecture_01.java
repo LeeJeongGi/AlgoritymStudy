@@ -41,7 +41,6 @@ public class Lecture_01 {
             this.key = key;
             this.weigh = weigh;
         }
-
         @Override
         public int compareTo(Person o) {
             return o.key - this.key;
