@@ -9,9 +9,11 @@ public class Lecture_03 {
          * 현수의 아빠는 제과점을 운영합니다. 현수 아빠는 현수에게 N일 동안의 매출기록을 주고 연속된 K일 동안의 최대 매출액이 얼마인지 구하라고 했습니다.
          */
         Scanner sc = new Scanner(System.in);
+
         int N = sc.nextInt();
         int K = sc.nextInt();
         int[] sales = new int[N];
+
         for (int i = 0; i < N; i++) {
             sales[i] = sc.nextInt();
         }
