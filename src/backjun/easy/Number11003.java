@@ -11,9 +11,9 @@ public class Number11003 {
          * 최솟값 찾기
          */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
+
         int N = Integer.parseInt(st.nextToken());
         int L = Integer.parseInt(st.nextToken());
         st = new StringTokenizer(br.readLine());
