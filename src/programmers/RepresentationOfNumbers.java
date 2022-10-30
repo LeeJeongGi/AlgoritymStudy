@@ -18,6 +18,7 @@ public class RepresentationOfNumbers {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         int[] cache = new int[N + 1];
+
         IntStream.rangeClosed(1, N)
                 .forEachOrdered(i -> cache[i] = i);
 
