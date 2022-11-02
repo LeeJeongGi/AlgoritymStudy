@@ -9,6 +9,7 @@ public class NextMaxNumber {
 
         int answer = 0;
         int nCount = Integer.bitCount(n);
+
         while (true) {
             n++;
             if (Integer.bitCount(n) == nCount) {
