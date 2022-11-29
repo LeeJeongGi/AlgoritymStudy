@@ -2,6 +2,8 @@ package src.kakao.two022;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.stream.IntStream;
 
 public class Problem0 {
     public static void main(String[] args) {
@@ -12,53 +14,45 @@ public class Problem0 {
         String[] report = {"ryan con", "ryan con", "ryan con", "ryan con"};
         int k = 3;
 
-        HashMap<String, ArrayList> reportLists = new HashMap<>();
-        HashMap<String, Integer> reportCount = new HashMap<>();
-        HashMap<String, Integer> result = new HashMap<>();
-
-        for (int i = 0; i < id_list.length; i++) {
-            reportLists.put(id_list[i], new ArrayList());
-            reportCount.put(id_list[i], 0);
-            result.put(id_list[i], 0);
-        }
+        HashMap<String, HashSet<String>> reportLists = new HashMap<>();
+        HashMap<String, HashSet<String>> reportResult = new HashMap<>();
 
         for (int i = 0; i < report.length; i++) {
             String[] split = report[i].split(" ");
+
             String userId = split[0];
             String reportUserId = split[1];
 
-            ArrayList<String> userOfReported = reportLists.get(userId);
-            if (!userOfReported.contains(reportUserId)) {
-                userOfReported.add(reportUserId);
-                reportCount.put(reportUserId, reportCount.get(reportUserId) + 1);
+            if (!reportLists.containsKey(userId)) {
+                reportLists.put(userId, new HashSet<>());
             }
+            reportLists.get(userId).add(reportUserId);
 
-        }
-
-        ArrayList<String> stopUser = new ArrayList<>();
-        for (String user : reportCount.keySet()) {
-            if (reportCount.get(user) >= k) {
-                stopUser.add(user);
+            if (!reportResult.containsKey(reportUserId)) {
+                reportResult.put(reportUserId, new HashSet<>());
             }
-        }
-
-        for (int i = 0; i < stopUser.size(); i++) {
-            String user = stopUser.get(i);
-            for (String key : reportLists.keySet()) {
-                if (reportLists.get(key).contains(user)) {
-                    result.put(key, result.get(key) + 1);
-                }
-            }
+            reportResult.get(reportUserId).add(userId);
         }
 
         int[] answer = new int[id_list.length];
-
         for (int i = 0; i < id_list.length; i++) {
-            answer[i] = result.get(id_list[i]);
+            int count = 0;
+            String temp = id_list[i];
+
+            if (!reportLists.containsKey(temp)) {
+                continue;
+            }
+
+            HashSet<String> ttt = reportLists.get(temp);
+            for (String s : ttt) {
+                if (reportResult.get(s).size() >= k) {
+                    answer[i]++;
+                }
+            }
+
         }
 
-        for (int i = 0; i < answer.length; i++) {
-            System.out.print(answer[i] + " ");
-        }
+        IntStream.range(0, answer.length)
+                .forEach(i -> System.out.print(answer[i] + " "));
     }
 }
