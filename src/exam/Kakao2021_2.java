@@ -46,7 +46,6 @@ public class Kakao2021_2 {
     }
 
     // 백트래킹 사용
-    // 사용 예시 : combination(arr, visited, 0, n, r)
     static void combination(char[] arr, boolean[] visited, int start, int n, int r, HashMap<String, Integer> menuTypeOfCount) {
         if (r == 0) {
             putMapInfo(arr, visited, n, menuTypeOfCount);
@@ -69,9 +68,9 @@ public class Kakao2021_2 {
                 temp +=arr[i];
             }
         }
-        char[] tttt = temp.toCharArray();
-        Arrays.sort(tttt);
-        temp = new String(tttt);
+        char[] tempChar = temp.toCharArray();
+        Arrays.sort(tempChar);
+        temp = new String(tempChar);
         menuTypeOfCount.put(temp, menuTypeOfCount.getOrDefault(temp, 0) + 1);
     }
 }
