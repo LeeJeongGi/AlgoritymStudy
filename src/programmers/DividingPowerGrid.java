@@ -7,7 +7,6 @@ public class DividingPowerGrid {
     public static void main(String[] args) {
         /**
          * 전력망 나누기
-         *
          * 1. 노드-간선 정보를 저장
          * 2. for 돌면서 하나씩 연결을 제외
          * 3. bfs cnt 를 구한다.
