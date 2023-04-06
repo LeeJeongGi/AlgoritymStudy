@@ -25,5 +25,6 @@ public class Sample {
 
         System.out.println(factorial);
         System.out.println(answer);
+        
     }
 }
